@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/slowordle/static/css/main.f5679d6f.css",
+    "main.js": "/slowordle/static/js/main.14c22fa7.js",
+    "index.html": "/slowordle/index.html",
+    "main.f5679d6f.css.map": "/slowordle/static/css/main.f5679d6f.css.map",
+    "main.14c22fa7.js.map": "/slowordle/static/js/main.14c22fa7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f5679d6f.css",
+    "static/js/main.14c22fa7.js"
+  ]
+}

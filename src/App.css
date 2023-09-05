@@ -1,38 +1,141 @@
+html,
+body,
+#root,
 .App {
-  text-align: center;
+    height: 100%;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    background-color: #282c34;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    flex: 0 1 auto;
+    border-bottom: solid 1px white;
+    height: 10vh;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* .container {
+    min-height: auto;
+} */
+.menu {
+    color: white;
+    background-color: rgb(27, 26, 26);
+    padding-top: 20vh;
+    overflow: scroll;
+    overflow-x: hidden;
+    max-height: 80vh;
+    position: fixed;
+    top: 0;
+    width: 0;
+    height: 100%;
+    overflow-y: auto;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+/* .menu::-webkit-scrollbar {
+  width: 1em;
+}
+
+.menu::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.menu::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+} */
+.menu > div {
+    display: flex;
+    flex-direction: row;
+    gap: 1px;
+    transition: 0.3s;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 3px;
+    opacity: 1;
+    justify-content: center;
+    text-decoration: none;
+    width: 250px;
+}
+
+.menu > div:hover {
+    opacity: 0.7;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+#wordinput > input {
+    height: 50px;
+    width: 150px;
+    font-size: 1.7rem;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.cell {
+    border: solid 1px white;
+    height: 60px;
+    width: 60px;
+    background-color: rgb(27, 26, 26);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+}
+.correct {
+    background-color: rgb(8, 131, 35);
+}
+.wrong-place {
+    background-color: rgb(197, 163, 69);
+}
+.incorrect {
+    background-color: rgb(117, 41, 10);
+}
+
+h2 {
+    color: white;
+}
+
+.menu-icon {
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+    position: absolute;
+    left: 2vh;
+    top: 2vh;
+    z-index: 2;
+}
+.menu-icon:hover {
+    transform: scale(1.1);
+}
+
+.menu-attempt {
+    height: 20px;
+    width: 20px;
+    border: 1px solid white;
+    display: block;
 }

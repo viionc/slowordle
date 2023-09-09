@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/slowordle/static/css/main.f5679d6f.css",
-    "main.js": "/slowordle/static/js/main.eb078a3b.js",
+    "main.js": "/slowordle/static/js/main.ebf8d47b.js",
     "index.html": "/slowordle/index.html",
     "main.f5679d6f.css.map": "/slowordle/static/css/main.f5679d6f.css.map",
-    "main.eb078a3b.js.map": "/slowordle/static/js/main.eb078a3b.js.map"
+    "main.ebf8d47b.js.map": "/slowordle/static/js/main.ebf8d47b.js.map"
   },
   "entrypoints": [
     "static/css/main.f5679d6f.css",
-    "static/js/main.eb078a3b.js"
+    "static/js/main.ebf8d47b.js"
   ]
 }

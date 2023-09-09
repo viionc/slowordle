@@ -45,21 +45,47 @@ function Game({currentGameDay, todaysWord, gameSave, setGameSave}) {
         const rows = document.querySelectorAll(".row");
         const currentRow = rows[attempt];
         const cells = Array.from(currentRow.children);
+        const tempLetters = [];
 
         if (inputWordLowerCase.length != 5) return;
         if (inputWordLowerCase.match("[^a-zA-ZąćęłńóśźżĄĘŁŃÓŚŹŻ]")) return;
 
-        cells.forEach((cell, i) => {
-            let letter = inputWordLowerCase[i];
-            cell.textContent = letter.toUpperCase();
-            if (todaysWord[i] === letter) {
-                cell.classList.add("correct");
-            } else if (todaysWord.includes(letter)) {
-                cell.classList.add("wrong-place");
+        for (let i = 0; i < 5; i++) {
+            let letter = tempLetters.filter(e => e.letter == todaysWord[i]);
+            if (letter.length) {
+                letter[0].index.push(i);
             } else {
-                cell.classList.add("incorrect");
+                letter = {letter: todaysWord[i], index: [i]};
             }
-        });
+            tempLetters.push(letter);
+        }
+
+        let lettersDone = [];
+
+        for (let i = 0; i < 5; i++) {
+            let inputLetter = inputWordLowerCase[i];
+            let inputHasLetter = tempLetters.filter(l => l.letter == inputLetter)[0];
+            cells[i].textContent = inputLetter.toUpperCase();
+
+            if (!inputHasLetter) continue;
+
+            if (inputHasLetter.index.includes(i)) {
+                cells[i].classList.add("correct");
+                lettersDone.push(inputLetter);
+            }
+        }
+
+        for (let i = 0; i < 5; i++) {
+            let inputLetter = inputWordLowerCase[i];
+            let inputHasLetter = tempLetters.filter(l => l.letter == inputLetter)[0];
+
+            if (!inputHasLetter) continue;
+
+            if (lettersDone.filter(e => e == inputLetter).length < inputHasLetter.index.length) {
+                lettersDone.push(inputLetter);
+                cells[i].classList.add("wrong-place");
+            }
+        }
 
         if (todaysWord === inputWordLowerCase) {
             setGameStatus("won");
